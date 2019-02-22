@@ -67,6 +67,49 @@ class List {
 }
 
 
+class HashTable {
+
+    // Constructor function
+    constructor() {
+        // Use a plain array to represent memory
+        this.memory=[];
+    }
+
+    // Hashing: take a key and turn it into an address
+    hashKey(key) {
+        var hash=0;
+        for (var i=0; i<key.length; i++) {
+            var code=key.charCodeAt(i);
+            hash=((hash << 5)-hash) + code | 0;
+        }
+        return hash;
+    }
+
+    // Get values by their keys
+    get(key) {
+        // turn the key into an address
+        var address=this.hashKey(key);
+        return this.memory[address];
+    }
+
+    // Set key - value pair
+    set(key, value) {
+        var address=this.hashKey(key);
+        this.memory[address]=value;
+    }
+
+    // Remove items from the hash table
+    remove(key) {
+        var address=this.hashKey(key);
+        if (this.memory[address]) {
+            delete this.memory[address];
+        }
+    }
+}
+
+
+
 module.exports = {
-  List
+    List,
+    HashTable
 };
