@@ -2,6 +2,11 @@
    Collection of various data structures
 */
 
+
+/**
+ Linked List data structure.
+ We use a simple array to represent our memory
+*/
 class List {
 
     // Constructor function
@@ -66,7 +71,18 @@ class List {
 
 }
 
-
+/**
+ Hash Table data structure.
+ We use a simple array to represent our memory.
+ In order to store key-value pairs we need a way to take the key
+ and turn it into an address. This operation is called "hashing".
+ It takes a key and serializes it to a unique number.
+ The hashing algorithm needs to limit the size, which means that 
+ there are a limited number of addresses for an unlimited number of
+ values. The result is that you can end up with collisions: Places 
+ where two keys get turned into the same address. (we do not deal with
+ this situation in this example)
+*/
 class HashTable {
 
     // Constructor function
@@ -106,6 +122,8 @@ class HashTable {
         }
     }
 }
+
+
 
 
 
