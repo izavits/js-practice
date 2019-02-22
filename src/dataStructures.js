@@ -163,8 +163,47 @@ class Stack {
 }
 
 
+/**
+   Queue data structure
+*/
+class Queue {
+
+    // Constructor function
+    constructor() {
+        this.list=[];
+        this.length=0;
+    }
+
+    // Add items to queue.
+    // This function will push items at the end of the list
+    enqueue(value) {
+        this.length++;
+        this.list.push(value);
+    }
+
+    // Remove item from the queue. This will remove the item
+    // from the start of the list
+    dequeue() {
+        if (this.length===0) {
+            return;
+        }
+        else {
+            this.length--;
+            return this.list.shift();
+        }
+    }
+
+    // View the item at the start of the queue
+    // without removing it
+    peek() {
+        return this.list[0];
+    }
+}
+
+
 module.exports = {
     List,
     HashTable,
-    Stack
+    Stack,
+    Queue
 };
