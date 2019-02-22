@@ -1,4 +1,4 @@
-/**
+**
    Collection of various data structures
 */
 
@@ -124,10 +124,47 @@ class HashTable {
 }
 
 
+// Start implementing data structures using other data structures
 
+/**
+    Stack data structure.
+    Stacks are similar to lists.
+*/
+class Stack {
+
+    // Constructor function
+    constructor() {
+        this.list=[];
+        this.length=0;
+    }
+
+    // Push items to the top of the stack
+    push(value) {
+        this.length++;
+        this.list.push(value);
+    }
+
+    // Pop items from the top of the stack
+    pop() {
+        if (this.length===0) {
+            return;
+        }
+        else {
+            this.length--;
+            return this.list.pop();
+        }
+    }
+
+    // View the item at the top of the stack
+    // without removing it
+    peek() {
+        return this.list[this.length-1];
+    }
+}
 
 
 module.exports = {
     List,
-    HashTable
+    HashTable,
+    Stack
 };
