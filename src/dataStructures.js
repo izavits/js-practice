@@ -29,7 +29,7 @@ class List {
     // Pop item from the end of the list
     pop() {
         if (this.length===0) {
-            return;
+            return undefined;
         }
         else {
             var lastAddress=this.length-1;
@@ -56,7 +56,7 @@ class List {
     // Shift an item from the start of the list
     shift() {
         if (this.length === 0) {
-            return;
+            return undefined;
         }
         else {
             var value=this.memory[0];
@@ -147,7 +147,7 @@ class Stack {
     // Pop items from the top of the stack
     pop() {
         if (this.length===0) {
-            return;
+            return undefined;
         }
         else {
             this.length--;
@@ -185,7 +185,7 @@ class Queue {
     // from the start of the list
     dequeue() {
         if (this.length===0) {
-            return;
+            return undefined;
         }
         else {
             this.length--;
@@ -201,9 +201,51 @@ class Queue {
 }
 
 
+/**
+    Graph data structure.
+*/
+class Graph {
+
+    // Constructor function
+    constructor() {
+        // We will hold all nodes in a js array
+        this.nodes=[];
+    }
+
+    // Add a node to the graph with a given value
+    // but without a line at this moment
+    addNode(value) {
+        return this.nodes.push({
+            value,
+            lines:[]
+        });
+    }
+
+    // Look up nodes
+    find(value) {
+        return this.nodes.find(node => {
+            return node.value===value;
+        });
+    }
+
+    // Add line between nodes
+    addLine(start, end) {
+        // Find the starting and ending nodes
+        var startNode=this.find(start);
+        var endNode=this.find(end);
+        if (!startNode || !endNode) {
+            throw new Error('Both nodes need to exist!');
+        }
+        // Add a reference to the endNode from the startNode
+        startNode.lines.push(endNode);
+    }
+}
+
+
 module.exports = {
     List,
     HashTable,
     Stack,
-    Queue
+    Queue,
+    Graph
 };
