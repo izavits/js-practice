@@ -47,6 +47,6 @@ var mergeIntervals=function mergeIntervals(intervals, intersect) {
 };
 
 console.log(mergeIntervals([[1,5], [2,4], [8,10], [15,18]]));
-console.log(mergeIntervals([[2,4], [3,5], [8,10], [15,18]])); // the last two test should have
+console.log(mergeIntervals([[2,4], [3,5], [8,10], [15,18]])); // the last two tests should have
 console.log(mergeIntervals([[3,5], [2,4], [8,10], [15,16]])); // the same result
 console.log(mergeIntervals([[1,2],[3,5],[6,7],[8,10],[12,16]], [4,9]));

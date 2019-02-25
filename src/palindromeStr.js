@@ -1,5 +1,5 @@
 /**
-  Chech if a string is palindrome
+  Check if a string is palindrome
 */
 
 var checkPalindrome=function checkPalindrome(str) {
