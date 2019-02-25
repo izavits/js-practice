@@ -242,10 +242,74 @@ class Graph {
 }
 
 
+/**
+   Linked list data structure
+*/
+class LinkedList {
+
+    // Constructor function
+    constructor() {
+        this.head=null;
+        this.length=0;
+    }
+
+    // Get value in given position
+    get(position) {
+        if (position>=this.length) {
+            throw new Error('Position out of range');
+        }
+        var current=this.head;
+        // Slide through the nodes until we reach the given position
+        for (var i=0; i<position; i++) {
+            current=current.next;
+        }
+        return current;
+    }
+
+    // Add nodes to the list at the specified position
+    add(value, position) {
+        // Create node to hold the given value
+        var node={
+            value,
+            next:null
+        };
+        if (position===0) {
+            // Insert node at the head
+            node.next=this.head;
+            this.head=node;
+        } else {
+            // Given the position, find previous and current node
+            // and insert the new node in between
+            var previous=this.get(position-1);
+            var current=previous.next;
+            node.next=current;
+            previous.next=node;
+        }
+        this.length++;
+    }
+
+    // Remove node from a given position
+    remove(position) {
+        if (!this.head) {
+            throw new Error('Cannot remove from empty list');
+        }
+        if (position===0) {
+            this.head=this.head.next;
+        } else {
+            var previous=this.get(position-1);
+            previous.next=previous.next.next;
+        }
+        this.length--;
+    }
+    
+}
+
+
 module.exports = {
     List,
     HashTable,
     Stack,
     Queue,
-    Graph
+    Graph,
+    LinkedList
 };
