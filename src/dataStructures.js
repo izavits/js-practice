@@ -348,6 +348,81 @@ class Tree {
 }
 
 
+/**
+    Binary Search Tree data structure.
+    Each node can have two children:
+    - Left: less than parent node's value.
+    - Right: greater than parent node's value.
+*/
+class BinarySearchTree {
+
+    // Constructor function
+    constructor() {
+        this.root=null;
+    }
+
+    // Search through the tree for a given value
+    contains(value) {
+        // Start from the root
+        var current=this.root;
+        while(current) {
+            if (value>current.value) {
+                // then move to the right
+                current=current.right;
+            } else if (value<current.value) {
+                current=current.left;
+            } else {
+                return true;
+            }   
+        }
+        // If value not found, return false
+        return false;
+    }
+
+    // Add new nodes
+    // Traverse the tree and when we reach a left of right that is null
+    // we'll add the node
+    add(value) {
+        // Set up the new node
+        var node={
+            value:value,
+            left:null,
+            right:null
+        };
+        // If there's no root
+        if (this.root===null) {
+            this.root=node;
+        } else {
+            // Start from the root
+            var current=this.root;
+            while(true) {
+                if (value>current.value) {
+                    // Move to the right and check if exists
+                    if (!current.right) {
+                        current.right=node;
+                        break;
+                    }
+                    // Otherwise, move right
+                    current=current.right;
+                } else if (value<current.value) {
+                    // Then move to the left
+                    // Check if exists
+                    if (!current.left) {
+                        current.left=node;
+                        break;
+                    }
+                    // Otherwise move left
+                    current=current.left;
+                } else {
+                    // Else the number should be the same so don't do anything
+                    break;
+                }
+            }
+        }
+    }
+}
+
+
 module.exports = {
     List,
     HashTable,
@@ -355,5 +430,6 @@ module.exports = {
     Queue,
     Graph,
     LinkedList,
-    Tree
+    Tree,
+    BinarySearchTree
 };
