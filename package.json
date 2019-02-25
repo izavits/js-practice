@@ -1,0 +1,25 @@
+{
+  "name": "js-practice",
+  "version": "1.0.0",
+  "description": "Javascript examples and exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/izavits/js-practice.git"
+  },
+  "keywords": [
+    "practice",
+    "javascript",
+    "examples",
+    "js-examples"
+  ],
+  "author": "izavits",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/izavits/js-practice/issues"
+  },
+  "homepage": "https://github.com/izavits/js-practice#readme"
+}
