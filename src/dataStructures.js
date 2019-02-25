@@ -305,11 +305,55 @@ class LinkedList {
 }
 
 
+/**
+    Tree data structure.
+    A Tree at its simplest form.
+*/
+class Tree {
+
+    // Constructor function
+    constructor() {
+        // Start with a single parent, the root.
+        this.root=null;
+    }
+
+    // Traverse the tree and call a method on each node
+    traverse(callback) {
+        // Define a walk function and call recursively
+        function walk(node) {
+            // call the callback on the node
+            callback(node);
+            node.children.forEach(walk);
+        }
+        walk(this.root);
+    }
+
+    // Add nodes to the Tree
+    add(value, parentValue) {
+        var newNode={
+            value,
+            children:[]
+        };
+        if (this.root===null) {
+            this.root=newNode;
+        } else {
+            this.traverse(node => {
+                if (node.value===parentValue) {
+                    node.children.push(newNode);
+                }
+            });
+        }
+        
+    }
+}
+
+
 module.exports = {
     List,
     HashTable,
     Stack,
     Queue,
     Graph,
-    LinkedList
+    LinkedList,
+    Tree
 };
