@@ -27,6 +27,7 @@ A set of Javascript exercises for practice.
 - [memoization.js](./src/memoization.js) - Memoization examples.
 - [overlapIntervals.js](./src/overlapIntervals.js) - Merge all overlapping intervals.
 - [palindromeStr.js](./src/palindromeStr.js) - Check if a string is palindrome.
+- [recursion.js](./src/recursion.js) - Various recursion examples.
 - [removeElem.js](./src/removeElem.js) - Given an array and a value, remove all instances of that value in place and return the new length.
 - [rotateArray.js](./src/rotateArray.js) - Rotate array on n elements to the right by k.
 - [scope.js](./src/scope.js) - Variable scope simple example.
