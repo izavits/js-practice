@@ -1,10 +1,18 @@
 # js-practice
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
-A set of Javascript exercises for practice.
+> A set of Javascript exercises for practice.
+
+## Table of Contents
+
+- [Exercises](#exercises)
+- [Support](#support)
+- [Contributing](#contributing)
+- [License](#license)
 
 
-## Contents
+## Exercises
 
 - [BFS.js](./src/BFS.js) -  Breath First Search.
 - [anagrams.js](./src/anagrams.js) - Given an array of strings, return all groups of strings that are anagrams.
@@ -35,3 +43,25 @@ A set of Javascript exercises for practice.
 - [threeSumZero.js](./src/threeSumZero.js) - Given an array of integers, are there three elements *a,b,c* such that *a+b+c=0*?
 - [twoSum.js](./src/twoSum.js) - Given an array of integers, find two numbers that they add up to a specific target.
 - [wildcharMatch.js](./src/wildcharMatch.js) - Wildchar pattern matching with support for ? and *.
+## Support
+If you're having any problem, please raise an issue on GitHub.
+
+## Contributing
+PRs accepted. Some general guidelines:
+
+- Write a concise commit message explaining your changes.
+- If applies, write more descriptive information in the commit body.
+- Refer to the issue/s your pull request fixes (if there are issues in the github repo).
+- Write a descriptive pull request title.
+- Squash commits when possible.
+
+Before your pull request can be merged, the following conditions must hold:
+
+- All the tests passes (if any).
+- The coding style aligns with the project's convention.
+- Your changes are confirmed to be working.
+
+Small note: If editing the Readme, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+## License
+The project is licensed under the Apache-2.0 license.
